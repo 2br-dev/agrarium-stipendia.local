@@ -1,0 +1,100 @@
+[
+	{
+		"section": "Бакалавриат, специалитет",
+		"until": "31 декабря 2023",
+		"collection": [
+			{
+				"sum": "4 000 – 15 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/b1.jpg",
+				"name": "Стипендия №1",
+				"wide": "false",
+				"tabs": "./data/b1.json",
+				"conditions": [
+					"Олимпиада"
+				]
+			},
+			{
+				"sum": "3 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/b2.jpg",
+				"name": "Стипендия №2",
+				"wide": "false",
+				"tabs": "./data/b2.json",
+				"conditions": [
+					"Олимпиада 100",
+					"ЕГЭ > 75"
+				]
+			},
+			{
+				"sum": "2 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/b3.jpg",
+				"name": "Стипендия №3",
+				"wide": "false",
+				"tabs": "./data/b3.json",
+				"conditions": [
+					"ЕГЭ 100"
+				]
+			},
+			{
+				"sum": "10 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/b4.jpg",
+				"name": "Стипендия №4",
+				"wide": "false",
+				"tabs": "./data/b4.json",
+				"conditions":[
+					"Сумма баллов > 255"
+				]
+			},
+			{
+				"sum": "10 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/b5.jpg",
+				"name": "Стипендия №5",
+				"wide": "true",
+				"tabs": "./data/b5.json",
+				"conditions": [
+					"Сумма баллов > 255"
+				]
+			}
+		]
+	},
+	{
+		"section": "Магистратура",
+		"until": "31 августа 2024 г.",
+		"collection": [
+			{
+				"sum": "15 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/m1.jpg",
+				"name": "Стипендия №6",
+				"wide": "false",
+				"tabs": "./data/m1.json"
+			},
+			{
+				"sum": "10 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/m2.jpg",
+				"name": "Стипендия №7",
+				"wide": "false",
+				"tabs": "./data/m2.json"
+			}
+		]
+	},
+	{
+		"section": "Аспирантура",
+		"until": "31 августа 2024 г.",
+		"collection": [
+			{
+				"sum": "20 000р.",
+				"sum_subheader": "ежемесячно",
+				"image": "/img/a1.jpg",
+				"name": "Стипендия №8",
+				"wide": "false",
+				"tabs": "./data/a1.json"
+			}
+		]
+	}
+]

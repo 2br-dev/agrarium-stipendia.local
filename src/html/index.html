@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/master.css">
+</head>
+<body>
+	@@include('./parts/header.html')
+	<main id="main">
+		<section id="hero">
+			<div class="hero-wrapper">				
+				<div class="container">
+					<div class="row flex">
+						<div class="col l5 m6 s12">
+							<div class="hero-text">
+								<h1 class="align-center-m-down">Стипендии талантливым обучающимся</h1>
+							</div>
+						</div>
+						<div class="col l5 offset-l1 m6 s8 offset-s2 xs10 offset-xs1">
+							<div class="hero-image">
+								<img data-src="/img/phone.png" alt="" class="lazy responsive-img">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="el-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col l5 offset-l6 m6 offset-m6 s8 offset-s2 xs10 offset-xs1">
+							<div class="el"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="cards">
+			@@loop('./parts/section.html', './data/sections.json')
+		</section>
+		<section id="documents">
+			<div class="container">
+				<div class="row flex">
+					<div class="col l3 m10 s12 xs6">
+						<div class="section-header align-center-m-down">
+							<div class="header-text">
+								<h2>Нормативная документация</h2>
+							</div>
+							<div class="section-actions">
+								<a href="" class="bttn-outline">Смотреть все документы</a>
+							</div>
+						</div>
+					</div>
+					<div class="col l2 m3 s4 xs6 t8 offset-t2">
+						<a class="doc lazy" href="#!" data-bg="/img/doc-icon.svg" alt="">
+							<span class="doc-header">Бакалавриат, специалитет</span>
+						</a>
+					</div>
+					<div class="col l2 m3 s4 xs6 t8 offset-t2">
+						<a class="doc lazy" href="#!" data-bg="/img/doc-icon.svg" alt="">
+							<span class="doc-header">Магистратура</span>
+						</a>
+					</div>
+					<div class="col l2 m3 s4 xs6 t8 offset-t2">
+						<a class="doc lazy" href="#!" data-bg="/img/doc-icon.svg" alt="">
+							<span class="doc-header">Аспирантура</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	@@include('./parts/footer.html')
+	<script src="/js/master.js"></script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+main#main{
+	
+	& section{
+
+		&#hero{
+
+			background-color: #F5F9FF;
+			border-bottom: 1px solid $fogged;
+			position: relative;
+
+			& .el-wrapper{
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+
+				& .container{
+					height: 100%;
+				}
+
+				& .row{
+					height: 100%;
+				}
+				
+				& .col{
+
+					height: 100%;
+					position: relative;
+
+					& .el{
+						position: absolute;
+						width: clamp(100px, 10vw, 230px);
+						bottom: 0;
+						right: 0;
+						transform: translate(30%, 30%);
+						z-index: 2;
+						aspect-ratio: 1 / 1;
+						background-image: url(/img/header_arrow.png);
+						background-size: contain;
+						background-position: bottom right;
+						background-repeat: no-repeat;
+
+						@media(max-width: $small){
+							transform: translateY(30%);
+						}
+					}
+				}
+			}
+
+			& .hero-wrapper{
+				overflow: hidden;
+			}
+
+			& .container{
+				
+				& .row{
+					
+					margin: 0;
+
+					& .hero-text{
+
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+
+						@media(max-width: $medium){
+							padding-top: 2vmax;
+						}
+
+						& h1{
+							margin-top: 2em;
+							display: block;
+						}
+					}
+
+					& .hero-image{
+
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-end;
+						position: relative;
+
+						@media(min-width: $medium){
+							padding-top: 80px;
+						}
+
+						&:before{
+							content: '';
+							display: block;
+							position: absolute;
+							bottom: 0;
+							width: 80vw;
+							height: 100%;
+							left: 50%;
+							transform: translateX(-50%);
+							background-image: url(/img/confetti.svg);
+							background-size: cover;
+							background-position: bottom center;
+							background-repeat: no-repeat;
+							z-index: 0;
+						}
+
+						&:after{
+							content: '';
+							display: block;
+							position: absolute;
+						}
+
+						& img{
+							margin-top: auto;
+							position: relative;
+							z-index: 1;
+							margin-top: 4vmax;
+						}
+					}
+				}
+			}
+		}
+
+		&#cards{
+
+			padding: 4vmax 0;
+
+			& .container{
+
+				& .section-trigger{
+
+					display: flex;
+					align-items: center;
+					padding: clamp(20px, 1.5vmax, 1.5vmax) 1.5vmax;
+					cursor: pointer;
+					border-bottom: 1px solid $fogged;
+
+					& .trigger-text{
+
+						display: flex;
+						align-items: center;
+						flex-grow: 1;
+
+						& h2{
+							margin: 0;
+							margin-right: 1vmax;
+							color: $primary;
+							font-size: clamp(26px, 5vw, 48px);
+							line-height: 1.2em;
+						}
+
+						& span{
+							color: $fogged;
+							font-size: clamp(16px, 2vw, 24px);
+						}
+
+						@media(max-width: $medium){
+							flex-direction: column;
+							align-items: flex-start;
+						}
+					}
+
+					& .arrow{
+						width: clamp(45px, 5vw, 76px);
+						flex-shrink: 0;
+						aspect-ratio: 1 / 1;
+						border-radius: 50%;
+						background-image: url(/img/section-arrow.svg);
+						background-position: center center;
+						background-repeat: no-repeat;
+						background-size: auto 50%;
+						background-color: #fff;
+						box-shadow: 10px 0 28px rgba(black, .1);
+						transition: transform .4s, box-shadow .4s;
+					}
+
+					&.active .arrow{
+						box-shadow: 0 -10px 28px rgba(black, .1);
+						transform: rotate(90deg);
+					}
+
+				}
+
+				& .section-content{
+
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					gap: $gutter-width;
+					display: none;
+					padding: 4vmax 0;
+					transform: translateZ(0);
+
+					@media(max-width: $medium){
+						grid-template-columns: repeat(1, 1fr);
+					}
+				}
+
+				& .s-card{
+
+					display: flex;
+
+					&[data-wide=true]{
+						grid-column: auto / span 2;
+
+						@media(min-width: $medium){
+							
+							& .tab-content ul{
+								columns: 2;
+							}
+						}
+
+						@media(max-width: $medium){
+							grid-column: 1 / 2;
+						}
+					}
+
+					& .card-header{
+
+						width: clamp(350px, 5vw, 500px);
+						flex-shrink: 0;
+						display: flex;
+						flex-direction: column;
+
+						& .sum-wrapper{
+							background-color: #52B909;
+							color: #fff;
+							padding: clamp(10px, 2vmax, 100px);
+							width: clamp(350px, 5vw, 500px);
+
+
+							& .summ{
+								font-size: clamp(32px, 4vw, 64px);
+								line-height: 1em;
+								font-weight: 900;
+							}
+						}
+
+						& .img-wrapper{
+
+							flex-grow: 1;
+
+							& img{
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+							}
+						}
+					}
+
+					& .card-content{
+						background-color: #eee;
+						padding: clamp(10px, 2vw, 36px);
+						display: flex;
+						flex-direction: column;
+						flex-grow: 1;
+
+						@media(max-width: $medium){
+							padding: 1.5vmax 10px;
+						}
+
+						& .card-content-wrapper{
+							flex-grow: 1;
+							display: flex;
+							flex-direction: column;
+						}
+
+						& h3{
+							margin-top: 0;
+							color: $secondary;
+						}
+					}
+
+					& .tabs{
+
+						display: flex;
+						margin-bottom: 0;
+						overflow: hidden;
+
+						& li{
+
+							position: relative;
+							z-index: 0;
+
+							& a{
+								padding: 7px 15px;
+								display: block;
+								background-color: $primary;
+								color: #fff;
+								border-radius: 10px 10px 0 0;
+								margin-right: 1px;
+							}
+
+							&.active{
+
+								z-index: 2;
+
+								& a{
+									background-color: #fff;
+									color: $primary;
+								}
+
+								&:before{
+									content: '';
+									display: block;
+									position: absolute;
+									bottom: -1px;
+									left: 0;
+									transform: translateX(-100%);
+									width: 15px;
+									aspect-ratio: 1 / 1;
+									background-image: url(/img/tab-rounds.svg);
+									background-size: cover;
+									background-repeat: no-repeat;
+									background-position: bottom left;
+									z-index: 2;
+								}
+
+								&:after{
+									@extend:before;
+									left: unset;
+									right: 0;
+									transform: translateX(calc(100% - 1px));
+									background-position: bottom right;
+								}
+							}
+						}
+					}
+
+					& .tab-content{
+						padding: 10px;
+						border-radius: 0 10px 10px 10px;
+						background-color: #fff;
+						display: none;
+
+						&.active{
+							display: block;
+						}
+					}
+
+					& .tags{
+
+						margin-top: 20px;
+						list-style: none;
+						padding: 0;
+						display: flex;
+						flex-wrap: wrap;
+
+						& li{
+							color: $secondary;
+							display: block;
+							border: 1px solid $secondary;
+							padding: 5px 10px;
+							border-radius: 200px;
+
+							&:not(:last-of-type){
+								margin-right: 10px;
+							}
+						}
+					}
+
+					@media(max-width: $extra-large){
+						flex-direction: column;
+
+						& .card-header{
+							width: 100%;
+							display: flex;
+							flex-direction: row;
+							height: 300px;
+						}
+					}
+
+					@media(max-width: $medium){
+
+						& .card-header .sum-wrapper{
+							width: 35%;
+						}
+					}
+
+					@media(max-width: $small){
+
+						& .card-header{
+							flex-direction: column;
+
+							& .sum-wrapper{
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&#documents{
+			
+			margin-bottom: 4vmax;
+
+			& .container{
+				background-color: $secondary;
+				background-image: url(/img/docs_pattern.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: right center;
+				color: #fff;
+				padding: 1vmax;
+
+				& h2{
+					margin-top: 0;
+				}
+
+				& a{
+					color: #fff;
+				}
+
+				& .row{
+					margin: 0;
+				}
+
+				& .col{
+					margin-top: $gutter-width;
+				}
+
+				& .section-header{
+
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+
+					& .header-text{
+						flex-grow: 1;
+					}
+				}
+
+				& .doc{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					// min-height: 100%;
+					aspect-ratio: 1 / 1;
+					color: $primary;
+					background-color: #eee;
+					padding: clamp(5px, 2vw, 20px);
+					height: 100%;
+					background-position: bottom 10px right 10px;
+					background-size: 60%;
+					background-repeat: no-repeat;
+
+					& span{
+						display: block;
+
+						&.doc-header{
+							flex-grow: 1;
+							font-size: clamp(18px, 2vw, 24px);
+							font-weight: 700;
+						}
+
+					}
+				}
+			}
+		}
+	}
+}

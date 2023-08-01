@@ -1,0 +1,35 @@
+footer{
+
+	padding: 2vmax 0;
+	background-color: #666666;
+	color: #fff;
+
+	& .buttons-wrapper{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	& a{
+		color: #fff;
+		display: inline-flex !important;
+		align-items: center;
+		margin: 0 6px;
+
+		@media(max-width: 600px){
+			width: 100%;
+			text-align: center;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+
+		& img{
+			margin-right: 10px;
+		}
+
+		&.underline{
+			text-decoration: underline;
+		}
+	}
+
+}

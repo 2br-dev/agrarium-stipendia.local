@@ -1,0 +1,9 @@
+@@if(context.tags){
+
+	@@if(tags!='undefined'){
+
+		@@for(let i=0; i<JSON.parse(tags).length; i++){
+			<li class="card-tag">`+JSON.parse(tags)[i]+`</li>
+		}
+	}
+}

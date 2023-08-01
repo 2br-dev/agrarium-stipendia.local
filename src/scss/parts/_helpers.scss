@@ -1,0 +1,43 @@
+body{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	& main{
+		flex-grow: 1;
+	}
+
+	& .bttn{
+
+		display: inline-block;
+		padding:.8em 2em;
+	
+		&-outline{
+			@extend .bttn;
+			box-shadow: 0 0 0 1px rgba(#fff, .5) inset;
+			
+			&:hover{
+				box-shadow: 0 0 0 1px #fff inset;
+			}
+		}
+	
+		&-green{
+			@extend .bttn;
+			background-color: #71B73F;
+	
+			&:hover{
+				background-color: #52b909;
+				box-shadow: 0 0 0 1px #fff inset;
+			}
+		}
+	
+		&-white{
+			@extend .bttn;
+			background-color: rgba(#fff, .2);
+	
+			&:hover{
+				box-shadow: 0 0 0 1px #fff inset;
+			}
+		}
+	}
+}

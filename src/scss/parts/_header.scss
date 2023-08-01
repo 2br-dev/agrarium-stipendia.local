@@ -1,0 +1,52 @@
+header{
+	
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	// background-color: #F5F9FF;
+	
+	& .container{
+
+		
+		& nav{
+			
+			display: flex;
+			padding: 20px 0;
+			align-items: center;
+			
+			& .logo-wrapper{
+				
+				flex-grow: 1;
+				
+				& .logo{
+					display: block;
+					width: clamp(200px, 5vw, 300px);
+					aspect-ratio: 4.8 / 1;
+					background-image: url(/img/priority_logo.svg);
+					background-size: contain;
+					background-position: left center;
+					background-repeat: no-repeat;
+				}
+			}
+			
+			& .phone-wrapper{
+				text-align: right;
+				
+				& .prefix{
+					font-size: clamp(10px, 2vw, 14px);
+				}
+				
+				& .phone{
+					font-size: clamp(16px, 2vw, 32px);
+					font-weight: 900;
+				}
+				
+				& img{
+					height: 1.5rem;
+				}
+			}
+		}
+	}
+}

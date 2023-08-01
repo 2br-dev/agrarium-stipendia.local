@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="section-trigger">
+		<div class="trigger-text">
+			<h2>@@section</h2>
+			<span>ежемесячно, до @@until</span>
+		</div>
+		<div class="arrow"></div>
+	</div>
+	<div class="section-content">
+		@@if(context.collection){
+			@@for(let i=0; i<collection.length; i++){
+				<div class="s-card" data-wide="`+collection[i].wide+`">
+					<div class="card-header">
+						<div class="sum-wrapper">
+							<div class="summ">`+collection[i].sum+`</div>
+							<div class="sum-subheader">`+collection[i].sum_subheader+`</div>
+						</div>
+						<div class="img-wrapper">
+							<img data-src="`+collection[i].image+`" alt="" class="lazy responsive-img">
+						</div>
+					</div>
+					<div class="card-content">
+						<div class="card-content-wrapper">
+							<h3>`+collection[i].name+`</h3>
+							<ul class="tabs">
+								@@loop('./tab_header.html', '`+collection[i].tabs+`')
+							</ul>
+							<div class="tabs-content-wrapper">
+								@@loop('./tab_content.html', '`+collection[i].tabs+`')
+							</div>
+						</div>
+						<div class="tags">
+							@@include('./card-tag.html', {tags: '`+JSON.stringify(collection[i].conditions)+`'})
+						</div>
+					</div>
+				</div>
+			}
+		}
+	</div>
+</div>
